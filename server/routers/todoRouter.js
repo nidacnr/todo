@@ -5,6 +5,7 @@ import { auth } from '../helpers/auth.js'
 import { getTasks, postTask, DeleteTask} from '../controllers/TaskController.js'
 
 const router = Router()
+
 router.get('/', getTasks)
 
 router.get('/',(req,res) => {
@@ -15,7 +16,6 @@ router.get('/',(req,res) => {
         return res.status(200).json(result.rows)
     })
 })
-
 
 router.post('/create',(req,res) => {
     pool.query('insert into task (description) values ($1) returning *',
