@@ -5,7 +5,6 @@ import { auth } from '../helpers/auth.js'
 import { getTasks, postTask, DeleteTask} from '../controllers/TaskController.js'
 
 const router = Router()
-
 router.get('/', getTasks)
 
 router.get('/',(req,res) => {
@@ -43,4 +42,4 @@ router.delete('/delete/:id', (req, res) => {
     )
 })
 
-export default router 
+export default router
